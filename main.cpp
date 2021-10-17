@@ -27,7 +27,7 @@ int main()
 {
 const int fpsTarget(60);
 
-const int windowDimensions{383};
+const int windowDimensions{384};
 
 InitWindow(windowDimensions, windowDimensions, "Blizzie's Classy Clash");
 
