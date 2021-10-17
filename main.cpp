@@ -2,6 +2,27 @@
 #include "rlgl.h"
 #include "raymath.h"
 
+class character
+{
+  public:
+    Vector2 getWorldPos(){return worldPos;}
+
+    
+  private:
+    Texture2D texture;
+    Vector2 screenPos;
+    Vector2 worldPos;
+    //animation frames
+    float runningTime{};
+    int frame{};
+    const int maxFrames{4};
+    const float updateTime{1.f/12.f};
+    float spriteSheetRow{};
+    // 1: facing right, -1 facing left
+    float rightLeft{1.f};
+
+};
+
 int main()
 {
 const int fpsTarget(60);
