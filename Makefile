@@ -130,71 +130,71 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named raylib_template
+# Target rules for targets named game
 
 # Build rule for target.
-raylib_template: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 raylib_template
-.PHONY : raylib_template
+game: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 game
+.PHONY : game
 
 # fast build rule for target.
-raylib_template/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raylib_template.dir/build.make CMakeFiles/raylib_template.dir/build
-.PHONY : raylib_template/fast
+game/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/build
+.PHONY : game/fast
 
-character.o: character.cpp.o
+src/character.o: src/character.cpp.o
 
-.PHONY : character.o
-
-# target to build an object file
-character.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raylib_template.dir/build.make CMakeFiles/raylib_template.dir/character.cpp.o
-.PHONY : character.cpp.o
-
-character.i: character.cpp.i
-
-.PHONY : character.i
-
-# target to preprocess a source file
-character.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raylib_template.dir/build.make CMakeFiles/raylib_template.dir/character.cpp.i
-.PHONY : character.cpp.i
-
-character.s: character.cpp.s
-
-.PHONY : character.s
-
-# target to generate assembly for a file
-character.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raylib_template.dir/build.make CMakeFiles/raylib_template.dir/character.cpp.s
-.PHONY : character.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
+.PHONY : src/character.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raylib_template.dir/build.make CMakeFiles/raylib_template.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/character.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/character.cpp.o
+.PHONY : src/character.cpp.o
 
-main.i: main.cpp.i
+src/character.i: src/character.cpp.i
 
-.PHONY : main.i
+.PHONY : src/character.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raylib_template.dir/build.make CMakeFiles/raylib_template.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/character.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/character.cpp.i
+.PHONY : src/character.cpp.i
 
-main.s: main.cpp.s
+src/character.s: src/character.cpp.s
 
-.PHONY : main.s
+.PHONY : src/character.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/raylib_template.dir/build.make CMakeFiles/raylib_template.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/character.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/character.cpp.s
+.PHONY : src/character.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -204,13 +204,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... raylib_template"
-	@echo "... character.o"
-	@echo "... character.i"
-	@echo "... character.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... game"
+	@echo "... src/character.o"
+	@echo "... src/character.i"
+	@echo "... src/character.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 
