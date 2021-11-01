@@ -5,9 +5,8 @@
 class character
 {
 public:
-    character();
+    character(int winWidth, int winHeight);
     Vector2 getWorldPos() { return worldPos; }
-    void setScreenPos(int winWidth, int winHeight);
     void tick(float deltaTime);
     void undoMovement();
 
@@ -35,4 +34,5 @@ private:
         moving
     };
     charState currentState{idle};
+    float scale{4.f};
 };

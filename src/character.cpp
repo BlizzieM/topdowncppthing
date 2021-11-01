@@ -1,17 +1,13 @@
 #include "character.h"
 
-character::character()
+character::character(int winWidth, int winHeight)
 {
-    width = texture.width/maxFrames;
-    height = texture.height/maxRows;
+    width = texture.width / maxFrames;
+    height = texture.height / maxRows;
+    screenPos = {static_cast<float>(winWidth) / 2.0f - scale * (0.5f * width),
+                 static_cast<float>(winHeight) / 2.0f - scale * (0.5f * height)};
 }
 
-void character::setScreenPos(int winWidth, int winHeight)
-{
-    screenPos = {
-        (float)winWidth / 2.0f - 4.0f * (0.5f * width),
-        (float)winHeight / 2.0f - 4.0f * (0.5f * height)};
-}
 
 void character::undoMovement()
 {
@@ -19,7 +15,7 @@ void character::undoMovement()
 }
 
 void character::tick(float deltaTime)
-{ 
+{
     worldPosLastFrame = worldPos;
     Vector2 direction{};
     if (IsKeyDown(KEY_A))
@@ -65,6 +61,6 @@ void character::tick(float deltaTime)
 
     //draw player character
     Rectangle charSource{frame * width, SheetRow * height, rightLeft * width, height};
-    Rectangle charDest{screenPos.x, screenPos.y, 4.0f * width, 4.f * height};
+    Rectangle charDest{screenPos.x, screenPos.y, scale * width, scale * height};
     DrawTexturePro(texture, charSource, charDest, Vector2{}, 0.f, WHITE);
 }

@@ -196,6 +196,33 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/prop.o: src/prop.cpp.o
+
+.PHONY : src/prop.o
+
+# target to build an object file
+src/prop.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/prop.cpp.o
+.PHONY : src/prop.cpp.o
+
+src/prop.i: src/prop.cpp.i
+
+.PHONY : src/prop.i
+
+# target to preprocess a source file
+src/prop.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/prop.cpp.i
+.PHONY : src/prop.cpp.i
+
+src/prop.s: src/prop.cpp.s
+
+.PHONY : src/prop.s
+
+# target to generate assembly for a file
+src/prop.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/prop.cpp.s
+.PHONY : src/prop.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -211,6 +238,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/prop.o"
+	@echo "... src/prop.i"
+	@echo "... src/prop.s"
 .PHONY : help
 
 

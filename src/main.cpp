@@ -2,6 +2,7 @@
 #include "rlgl.h"
 #include "raymath.h"
 #include "character.h"
+#include "prop.h"
 
 int main()
 {
@@ -14,8 +15,9 @@ int main()
   Texture2D map = LoadTexture("Maps/Final/Overworld.png");
   const float mapScale{6.0f};
   Vector2 mapPos{0.0, 0.0};
-  character pally;
-  pally.setScreenPos(windowDimensions, windowDimensions);
+  Vector2 rockPos{500.f, 400.f};
+  character pally{windowDimensions, windowDimensions};
+  prop rock{rockPos,LoadTexture("Textures/Ore.png")};
 
   SetTargetFPS(fpsTarget);
   while (!WindowShouldClose())
@@ -27,6 +29,7 @@ int main()
 
     //draw map
     DrawTextureEx(map, mapPos, 0.0, mapScale, WHITE);
+    rock.Render(pally.getWorldPos());
     pally.tick(GetFrameTime());
 
     //check map bounds
