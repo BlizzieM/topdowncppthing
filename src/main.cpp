@@ -19,6 +19,8 @@ int main()
   character pally{windowDimensions, windowDimensions};
 
   enemy hound{Vector2{0.f, 0.f}, LoadTexture("Textures/hound_sprite_sheet.png")};
+
+  hound.setTarget(&pally);
   
   prop props[2]{
     prop{Vector2{600.f, 300.f},LoadTexture("Textures/Ore.png")},
@@ -63,7 +65,7 @@ int main()
       }
     }
 
-    hound.tick(GetFrameTime(), pally.getWorldPos());
+    hound.tick(GetFrameTime());
     
 
     EndDrawing();
