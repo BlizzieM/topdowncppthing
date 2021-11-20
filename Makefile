@@ -142,6 +142,33 @@ game/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/build
 .PHONY : game/fast
 
+src/basecharacter.o: src/basecharacter.cpp.o
+
+.PHONY : src/basecharacter.o
+
+# target to build an object file
+src/basecharacter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/basecharacter.cpp.o
+.PHONY : src/basecharacter.cpp.o
+
+src/basecharacter.i: src/basecharacter.cpp.i
+
+.PHONY : src/basecharacter.i
+
+# target to preprocess a source file
+src/basecharacter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/basecharacter.cpp.i
+.PHONY : src/basecharacter.cpp.i
+
+src/basecharacter.s: src/basecharacter.cpp.s
+
+.PHONY : src/basecharacter.s
+
+# target to generate assembly for a file
+src/basecharacter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/basecharacter.cpp.s
+.PHONY : src/basecharacter.cpp.s
+
 src/character.o: src/character.cpp.o
 
 .PHONY : src/character.o
@@ -168,6 +195,33 @@ src/character.s: src/character.cpp.s
 src/character.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/character.cpp.s
 .PHONY : src/character.cpp.s
+
+src/enemy.o: src/enemy.cpp.o
+
+.PHONY : src/enemy.o
+
+# target to build an object file
+src/enemy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/enemy.cpp.o
+.PHONY : src/enemy.cpp.o
+
+src/enemy.i: src/enemy.cpp.i
+
+.PHONY : src/enemy.i
+
+# target to preprocess a source file
+src/enemy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/enemy.cpp.i
+.PHONY : src/enemy.cpp.i
+
+src/enemy.s: src/enemy.cpp.s
+
+.PHONY : src/enemy.s
+
+# target to generate assembly for a file
+src/enemy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/enemy.cpp.s
+.PHONY : src/enemy.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -232,9 +286,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... game"
+	@echo "... src/basecharacter.o"
+	@echo "... src/basecharacter.i"
+	@echo "... src/basecharacter.s"
 	@echo "... src/character.o"
 	@echo "... src/character.i"
 	@echo "... src/character.s"
+	@echo "... src/enemy.o"
+	@echo "... src/enemy.i"
+	@echo "... src/enemy.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

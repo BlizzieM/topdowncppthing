@@ -83,6 +83,30 @@ build CMakeFiles/game.dir/src/character.cpp.o: CXX_COMPILER__game_Debug ../src/c
   OBJECT_DIR = CMakeFiles/game.dir
   OBJECT_FILE_DIR = CMakeFiles/game.dir/src
 
+build CMakeFiles/game.dir/src/prop.cpp.o: CXX_COMPILER__game_Debug ../src/prop.cpp || cmake_object_order_depends_target_game
+  DEFINES = -DASSETS_PATH="\"/mnt/72d75732-3d9f-41aa-857d-7e5c3776d308/Work/CeePloosPloos/Classy Clash/assets/\""
+  DEP_FILE = CMakeFiles/game.dir/src/prop.cpp.o.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -I../
+  OBJECT_DIR = CMakeFiles/game.dir
+  OBJECT_FILE_DIR = CMakeFiles/game.dir/src
+
+build CMakeFiles/game.dir/src/enemy.cpp.o: CXX_COMPILER__game_Debug ../src/enemy.cpp || cmake_object_order_depends_target_game
+  DEFINES = -DASSETS_PATH="\"/mnt/72d75732-3d9f-41aa-857d-7e5c3776d308/Work/CeePloosPloos/Classy Clash/assets/\""
+  DEP_FILE = CMakeFiles/game.dir/src/enemy.cpp.o.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -I../
+  OBJECT_DIR = CMakeFiles/game.dir
+  OBJECT_FILE_DIR = CMakeFiles/game.dir/src
+
+build CMakeFiles/game.dir/src/basecharacter.cpp.o: CXX_COMPILER__game_Debug ../src/basecharacter.cpp || cmake_object_order_depends_target_game
+  DEFINES = -DASSETS_PATH="\"/mnt/72d75732-3d9f-41aa-857d-7e5c3776d308/Work/CeePloosPloos/Classy Clash/assets/\""
+  DEP_FILE = CMakeFiles/game.dir/src/basecharacter.cpp.o.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -I../
+  OBJECT_DIR = CMakeFiles/game.dir
+  OBJECT_FILE_DIR = CMakeFiles/game.dir/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target game
@@ -91,7 +115,7 @@ build CMakeFiles/game.dir/src/character.cpp.o: CXX_COMPILER__game_Debug ../src/c
 #############################################
 # Link the executable game
 
-build game: CXX_EXECUTABLE_LINKER__game_Debug CMakeFiles/game.dir/src/main.cpp.o CMakeFiles/game.dir/src/character.cpp.o
+build game: CXX_EXECUTABLE_LINKER__game_Debug CMakeFiles/game.dir/src/main.cpp.o CMakeFiles/game.dir/src/character.cpp.o CMakeFiles/game.dir/src/prop.cpp.o CMakeFiles/game.dir/src/enemy.cpp.o CMakeFiles/game.dir/src/basecharacter.cpp.o
   FLAGS = -g
   LINK_FLAGS = -rdynamic
   LINK_LIBRARIES = -lraylib

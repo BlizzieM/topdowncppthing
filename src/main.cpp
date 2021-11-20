@@ -3,6 +3,7 @@
 #include "raymath.h"
 #include "character.h"
 #include "prop.h"
+#include "enemy.h"
 
 int main()
 {
@@ -15,9 +16,15 @@ int main()
   Texture2D map = LoadTexture("Maps/Final/Overworld.png");
   const float mapScale{6.0f};
   Vector2 mapPos{0.0, 0.0};
-  Vector2 rockPos{500.f, 400.f};
   character pally{windowDimensions, windowDimensions};
-  prop rock{rockPos,LoadTexture("Textures/Ore.png")};
+
+  enemy hound{Vector2{0.f, 0.f}, LoadTexture("Textures/hound_sprite_sheet.png")};
+  
+  prop props[2]{
+    prop{Vector2{600.f, 300.f},LoadTexture("Textures/Ore.png")},
+    prop{Vector2{400.f, 500.f},LoadTexture("Textures/DwarvenWarren.png")},
+
+  };
 
   SetTargetFPS(fpsTarget);
   while (!WindowShouldClose())
@@ -29,7 +36,12 @@ int main()
 
     //draw map
     DrawTextureEx(map, mapPos, 0.0, mapScale, WHITE);
-    rock.Render(pally.getWorldPos());
+    
+    //draw the props
+    for (auto prop : props)
+    {
+      prop.Render(pally.getWorldPos());
+    }
     pally.tick(GetFrameTime());
 
     //check map bounds
@@ -40,6 +52,19 @@ int main()
     {
       pally.undoMovement();
     }
+
+
+    //check prop collisions
+    for (auto prop : props)
+    {
+      if(CheckCollisionRecs(pally.GetCollisionRec(), prop.GetCollisionRec(pally.getWorldPos())))
+      {
+        pally.undoMovement();
+      }
+    }
+
+    hound.tick(GetFrameTime(), pally.getWorldPos());
+    
 
     EndDrawing();
   }

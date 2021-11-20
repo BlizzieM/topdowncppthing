@@ -1,0 +1,4 @@
+# ninja log v5
+0	143	1635023819898265353	CMakeFiles/game.dir/src/main.cpp.o	8d5c2fccf461dd61
+0	145	1635023819898265353	CMakeFiles/game.dir/src/character.cpp.o	e290873866fb9477
+145	198	1635023819950265371	game	be7a8b971a0e8460

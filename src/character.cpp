@@ -8,12 +8,6 @@ character::character(int winWidth, int winHeight)
                  static_cast<float>(winHeight) / 2.0f - scale * (0.5f * height)};
 }
 
-
-void character::undoMovement()
-{
-    worldPos = worldPosLastFrame;
-}
-
 void character::tick(float deltaTime)
 {
     worldPosLastFrame = worldPos;

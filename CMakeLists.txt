@@ -11,7 +11,7 @@ set(BUILD_GAMES    OFF CACHE BOOL "" FORCE) # or games
 #add_subdirectory(code)
 include_directories(${PROJECT_SOURCE_DIR})
 
-add_executable(game src/main.cpp src/character.cpp src/prop.cpp)
+add_executable(game src/main.cpp src/character.cpp src/prop.cpp src/enemy.cpp src/basecharacter.cpp)
 target_link_libraries(game PRIVATE raylib)
 target_compile_definitions(game PUBLIC ASSETS_PATH="${CMAKE_CURRENT_SOURCE_DIR}/assets/") # Set the asset path macro to the absolute path on the dev machine
 #target_compile_definitions(raylib_template PUBLIC ASSETS_PATH="relative-path-to-assets-in-the-game-package") # Set the asset path macro in release more
