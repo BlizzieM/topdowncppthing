@@ -13,13 +13,22 @@ public:
     void undoMovement();
     Rectangle GetCollisionRec();
     virtual void tick(float deltaTime);
+    virtual Vector2 getScreenPos() = 0;
+    enum charState
+    {
+        IDLE,
+        MOVING,
+        DEAD
+    };
+    charState getCurrentState() { return currentState; }
+    void setCurrentState(charState newState) {currentState = newState;}
 
 private:
 protected:
     float width{};
     float height{};
     Texture2D texture{LoadTexture("Textures/Palladin_Sprite_Sheet.png")};
-    Vector2 screenPos{};
+    Texture2D sword{LoadTexture("Textures/sword.png")};
     Vector2 worldPos{};
     Vector2 worldPosLastFrame{};
     // 1: facing right, -1 facing left
@@ -33,13 +42,9 @@ protected:
     int maxRows{5};
     float speed{4.f};
     //character state
-    enum charState
-    {
-        idle,
-        moving
-    };
-    charState currentState{idle};
+    charState currentState{IDLE};
     float scale{4.f};
+    Vector2 velocity;
 };
 
 #endif

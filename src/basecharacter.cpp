@@ -2,18 +2,18 @@
 
 basecharacter::basecharacter()
 {
-    
 }
 void basecharacter::tick(float deltaTime)
 {
+    
     worldPosLastFrame = worldPos;
 
     switch (currentState)
     {
-    case idle:
+    case IDLE:
         SheetRow = 0.f;
         break;
-    case moving:
+    case MOVING:
         SheetRow = 1.f;
         break;
     default:
@@ -28,10 +28,25 @@ void basecharacter::tick(float deltaTime)
             frame = 0;
     }
 
+        if (Vector2Length(velocity) != 0.0)
+    {
+        currentState = MOVING;
+        //set worldPos = worldPos + direction
+        Vector2Normalize(velocity);
+        worldPos = Vector2Add(worldPos, Vector2Scale(Vector2Normalize(velocity), speed));
+        velocity.x < 0 ? rightLeft = -1.f : rightLeft = 1.f;
+    }
+    else
+    {
+        currentState = IDLE;
+    }
+
+    velocity = {};
+
     //draw character
 
     Rectangle charSource{frame * width, SheetRow * height, rightLeft * width, height};
-    Rectangle charDest{screenPos.x, screenPos.y, scale * width, scale * height};
+    Rectangle charDest{getScreenPos().x, getScreenPos().y, scale * width, scale * height};
     DrawTexturePro(texture, charSource, charDest, Vector2{}, 0.f, WHITE);
 }
 
@@ -43,8 +58,8 @@ void basecharacter::undoMovement()
 Rectangle basecharacter::GetCollisionRec()
 {
     return Rectangle{
-        screenPos.x,
-        screenPos.y,
+        getScreenPos().x,
+        getScreenPos().y,
         width * scale,
         height * scale,
     };
